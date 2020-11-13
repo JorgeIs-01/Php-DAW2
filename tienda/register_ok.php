@@ -1,6 +1,6 @@
 <?php
     //require_once __DIR__ . ;'/db_config.php';
-	$servidor="localhost";
+$servidor="localhost";
 $usuario="root";
 $contraseña="usbw";
 $bd="test";
@@ -31,20 +31,23 @@ if (isset($_POST["nick"]))
 	//Primero compruebo si el nick existe
 	$instruccion = "SELECT Usuario FROM login where Usuario = '$nombre'";
 	$res = mysql_num_rows(mysqli_query($con, $instruccion));
-	// $datos = mysqli_fetch_assoc($res);
+	$datos = mysqli_fetch_assoc($res);
 	
 	if ($res!= 0)
 	{
 		echo "ya existen".$res."usuarios";
 		
 		
-			echo "No se ha pordido crear el usuario";
+			echo "El usuario ya existe";
 		}
 		else
 		{
+			
+			$sql="INSERT INTO login (Usuario, Contrasena) VALUES ('$nombre', '$password')";
+			mysqli_query($con,$sql);
 			echo "Usuario creado";
 			//me lleva al login para que pruebe mi contraseña
-			echo "<script>alert('Usuario creado correctamente');</script>";
+			// echo "<script>alert('Usuario creado correctamente');</script>";
 			include_once("index.html");
 		}
 	

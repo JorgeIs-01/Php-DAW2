@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./tienda.css">
     <title>Tienda</title>
     <header>
   
@@ -28,9 +29,20 @@
     </ul>
     <span class="navbar-text">
     </html>
+    <nav>
+    <ul class="menu">
+        <li><a href="#slide1">Diapositiva 1<//a></ li>
+        <li><a href="#slide2">Diapositiva 2<//a></ li>
+        <li><a href="#slide3">Diapositiva 3<//a></ li>
+        <li><a href="#slide4">Diapositiva 4<//a></ li>
+        <li><a href="#slide5">Diapositiva 5<//a></ li>
+</ul>
+</nav>
     <?php
-    $nick = $_POST["nick"];
-    echo "Usuario".$nick;
+
+    session_start();
+    $_SESSION['nick_logueado']  = $nick;
+    echo "Usuario".$_SESSION['nick_logueado'];
     ?>
     <html>
     </span>
