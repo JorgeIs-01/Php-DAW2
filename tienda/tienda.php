@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./tienda.css">
+     <!-- <link rel="stylesheet" href="./tienda.css">  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Tienda</title>
     <header>
   
@@ -12,6 +15,7 @@
 </header>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,24 +33,56 @@
     </ul>
     <span class="navbar-text">
     </html>
-    <nav>
-    <ul class="menu">
-        <li><a href="#slide1">Diapositiva 1<//a></ li>
-        <li><a href="#slide2">Diapositiva 2<//a></ li>
-        <li><a href="#slide3">Diapositiva 3<//a></ li>
-        <li><a href="#slide4">Diapositiva 4<//a></ li>
-        <li><a href="#slide5">Diapositiva 5<//a></ li>
-</ul>
-</nav>
+    
     <?php
 
-    session_start();
-    $_SESSION['nick_logueado']  = $nick;
-    echo "Usuario".$_SESSION['nick_logueado'];
-    ?>
+session_start();
+?>
+<html>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?php
+      echo "Bienvenido ".$_SESSION['Trabajador'];
+      ?>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="perfil.php">Perfil</a>
+      <a class="dropdown-item" href="#">Pedidos</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+</html>
+
     <html>
     </span>
   </div>
 </nav>
+<div id="carouselExampleIndicators" class="carousel slide w-70  " data-ride="carousel" >
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg"  height="400"  alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </body>
+
 </html>
