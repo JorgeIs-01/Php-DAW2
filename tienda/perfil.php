@@ -44,3 +44,24 @@ session_start();
     </span>
   </div>
 </nav>
+<?php 
+echo "este es el perfil de ".$_SESSION['Trabajador']
+
+
+
+
+?>  
+<!-- //////////////////////// -->
+<!DOCTYPE html>
+
+<body>
+  <form action="newpass_ok.php" method = "post">
+  Nueva contrasena: <input type="text" name="newpassword" value="">
+  <input type="submit" value="Cambiar">
+</form>
+</body>
+</html>
+
+ <?php
+
+?> 

@@ -27,8 +27,21 @@
         <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Carrito</a>
+        <a class="nav-link" href="carrito.php">Carrito</a>
       </li>
+      <?php
+        session_start();
+          if ($_SESSION["Trabajador"]!=''){
+      ?>
+      <html>
+          <li class="nav-item active">
+        <a class="nav-link " href="logout.php" >Logout</a>
+      </li>
+      </html>
+      <?php
+      }
+      ?>
+      
       
     </ul>
     <span class="navbar-text">
@@ -36,7 +49,7 @@
     
     <?php
 
-session_start();
+
 ?>
 <html>
   <div class="dropdown">
@@ -63,17 +76,21 @@ session_start();
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg"  height="400"  alt="First slide">
+  <div class="container">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        
+          <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg"  height="400"   alt="First slide">
+        
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://barcelona.cool/wp-content/uploads/2019/02/tienda-hip-hop.jpg" height="400"  alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg"   height="400"  alt="Third slide">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg" alt="Second slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg" alt="Third slide">
-    </div>
-  </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -82,6 +99,12 @@ session_start();
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
+
+
+
+  <h3>Ofertas</h3>
+  <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
 </div>
 </body>
 
