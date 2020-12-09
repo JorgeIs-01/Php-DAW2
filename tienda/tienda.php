@@ -26,12 +26,25 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="carrito.php">Carrito</a>
       </li>
       <?php
         session_start();
           if ($_SESSION["Trabajador"]!=''){
+      ?>
+      <?php
+       
+          if ($_SESSION["Trabajador"]=='Admin'){
+      ?>
+      <html>
+          <li class="nav-item active">
+        <a class="nav-link " href="nuevoproducto.php" >Nuevo producto</a>
+      </li>
+      </html>
+      <?php
+      }
       ?>
       <html>
           <li class="nav-item active">

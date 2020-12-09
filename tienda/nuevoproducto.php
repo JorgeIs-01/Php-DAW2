@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item">
@@ -68,36 +68,14 @@
   </div>
 </nav>
 
+<br><br><div class="container">
+<form action="nuevoproducto_ok.php" method="post">
+Nombre producto: <input type="text" name="nombre" value=""><br>
+Descripcion:<input type="text" name="descripcion" value=""><br>
+Esta en oferta<input type="boolean" name="oferta" value=""><br>
+Precio<input type="text" name="precio" value=""><br>
+Imagen<input type="file" name="imagen" value=""><br>
+<td><input type="submit" value="crear"></td>
+</form>
 
-<table border="1" >
-		<tr>
-			<td>Nombre</td>
-            <td>Descripcion</td>
-            <td>oferta</td>
-			<td>Precio</td>
-			<td>imagen</td>
-			
-		</tr>
-
-		<?php 
-		$consulta="SELECT * from producto ";
-		$result=mysqli_query($con,$consulta);
-		
-		while($mostrar=mysqli_fetch_array($result)){
-			?>
-
-			<tr>
-				<td><?php echo $mostrar['Nombre'] ?></td>
-                <td><?php echo $mostrar['descripcion'] ?></td>
-                <td><?php echo $mostrar['oferta'] ?></td>
-				<td><?php echo $mostrar['precio'] ?></td>
-				<td><?php echo $mostrar['imagen'] ?></td>
-			
-		</tr>
-		
-		<?php 
-			}
-		
-		?>
-	
-	</table>
+</div>
