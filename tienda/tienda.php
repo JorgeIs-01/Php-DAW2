@@ -24,7 +24,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item">
@@ -115,9 +115,10 @@
 
 
 
-
-  <h3>Ofertas</h3>
-  <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
+  <div class="margin">
+    <h3>Productos destacados</h3>
+    <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
+  </div>
 </div>
 </body>
 

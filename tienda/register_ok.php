@@ -9,10 +9,11 @@ if (isset($_POST["nick"]))
 {
 	$nombre = $_POST["nick"];
 	$password = $_POST["password"];
+	$dni = $_POST["dni"];
+	$gmail = $_POST["email"];
+	echo "El nombre es ".$nombre;
 
-	echo "el nombre es ".$nombre;
-
-	$con = mysqli_connect("localhost", "root", "usbw", "test") or die(mysql_error());
+	$con = mysqli_connect("localhost", "root", "usbw", "tienda") or die(mysql_error());
 	
 	if (!$con)
 	{
@@ -29,13 +30,13 @@ if (isset($_POST["nick"]))
 	//Inserción de datos
 	
 	//Primero compruebo si el nick existe
-	$instruccion = "SELECT Usuario FROM login where Usuario = '$nombre'";
-	$res = mysql_num_rows(mysqli_query($con, $instruccion));
-	$datos = mysqli_fetch_assoc($res);
+	$instruccion = "SELECT Usuario FROM login where DNI = '$dni'";
+	$res = mysqli_num_rows(mysqli_query($con, $instruccion));
+
 	
 	if ($res!= 0)
 	{
-		echo "ya existen".$res."usuarios";
+		
 		
 		
 			echo "El usuario ya existe";
@@ -43,7 +44,7 @@ if (isset($_POST["nick"]))
 		else
 		{
 			
-			$sql="INSERT INTO login (Usuario, Contrasena) VALUES ('$nombre', '$password')";
+			$sql="INSERT INTO login (Usuario, Contrasena,DNI, gmail ) VALUES ('$nombre', '$password','$dni','$gmail')";
 			mysqli_query($con,$sql);
 			echo "Usuario creado";
 			//me lleva al login para que pruebe mi contraseña

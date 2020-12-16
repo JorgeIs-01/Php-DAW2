@@ -7,8 +7,8 @@ require_once 'database.php';
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Tienda</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-light bg-light">
+  <a class="navbar-brand" href="tienda.php">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -86,6 +86,7 @@ require_once 'database.php';
       <a class="dropdown-item" href="perfil.php">Precio ascendente</a>
       <a class="dropdown-item" href="#">Precio descendente</a>
       <a class="dropdown-item" href="#">Categorias</a>
+      
     </div>
   </div>   
 
@@ -93,6 +94,8 @@ require_once 'database.php';
 
 <table border="1" >
 		<tr>
+       
+			<td>id</td>
 			<td>Nombre</td>
             <td>Descripcion</td>
             <td>oferta</td>
@@ -109,12 +112,16 @@ require_once 'database.php';
 			?>
 
 			<tr>
+      <td><?php echo $mostrar['idProducto'] ?></td>
 				<td><?php echo $mostrar['Nombre'] ?></td>
                 <td><?php echo $mostrar['descripcion'] ?></td>
                 <td><?php echo $mostrar['oferta'] ?></td>
 				<td><?php echo $mostrar['precio'] ?></td>
-				<td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
-			
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+
+        <form action="deleteProducto.php" method="get">
+        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
+        </form>
 		</tr>
 		<?php 
 			}
