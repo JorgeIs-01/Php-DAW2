@@ -72,8 +72,8 @@
 <form action="nuevoproducto_ok.php" method="post">
 Nombre producto: <input type="text" name="nombre" value=""><br>
 Descripcion:<input type="text" name="descripcion" value=""><br>
-Esta en oferta<input type="boolean" name="oferta" value=""><br>
-Precio<input type="text" name="precio" value=""><br>
+Destacar producto<input type="boolean" name="destacar" value=""><br>
+Precio<input type="number" name="precio" value=""><br>
 Imagen<input type="text" name="imagen" value=""><br>
 <td><input type="submit" value="crear"></td>
 </form>

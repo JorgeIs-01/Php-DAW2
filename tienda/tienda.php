@@ -40,7 +40,7 @@
       ?>
       <html>
           <li class="nav-item active">
-        <a class="nav-link " href="nuevoproducto.php" >Nuevo producto</a>
+        <a class="nav-link " href="nuevoproducto.php"  >Nuevo producto</a>
       </li>
       </html>
       <?php
@@ -118,6 +118,43 @@
   <div class="margin">
     <h3>Productos destacados</h3>
     <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
+    <table border="1" >
+		<tr>
+       
+			<td>id</td>
+			<td>Nombre</td>
+      <td>Descripcion</td>
+      <td>Producto destacado</td>
+			<td>Precio</td>
+			<td>imagen</td>
+			
+		</tr>
+
+		<?php 
+		$consulta="SELECT * from producto where destacar='1'";
+		$result=mysqli_query($con,$consulta);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+			?>
+
+			<tr>
+      <td><?php echo $mostrar['idProducto'] ?></td>
+				<td><?php echo $mostrar['Nombre'] ?></td>
+        <td><?php echo $mostrar['descripcion'] ?></td>
+        <td><?php echo $mostrar['destacar'] ?></td>
+				<td><?php echo $mostrar['precio'] ?></td>
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+
+        <form action="deleteProducto.php" method="get">
+        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
+        </form>
+		</tr>
+		<?php 
+			}
+		
+		?>
+	
+	</table>
   </div>
 </div>
 </body>

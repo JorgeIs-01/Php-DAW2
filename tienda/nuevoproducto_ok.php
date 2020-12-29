@@ -4,13 +4,13 @@ require_once 'database.php';
 
 $nombre= $_POST["nombre"];
 $desc= $_POST["descripcion"];
-$oferta= $_POST["oferta"];
+$destacar= $_POST["destacar"];
 $precio= $_POST["precio"];
 $img= $_POST["imagen"];
 
 
-$sql = "INSERT INTO producto (Nombre , descripcion, oferta, precio, imagen) 
-    VALUES ('$nombre', '$desc', '$oferta','$precio','$img')";
+$sql = "INSERT INTO producto (Nombre , descripcion, destacar, precio, imagen) 
+    VALUES ('$nombre', '$desc', '$destacar','$precio','$img')";
 
     
 if (mysqli_query($con, $sql)) {

@@ -11,9 +11,6 @@ $_SESSION ["Trabajador"]=$nick;
 	 echo "El usuario:".$nick."<br>";
 	
 
-
-	
-
 	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
 	if (!$con)
 	{
@@ -44,7 +41,7 @@ $_SESSION ["Trabajador"]=$nick;
 	}
 	else{
 		echo "usuario correcto";
-		$instruccion = "select Contrasena as cuantos from login where DNI = '$nick'";
+		$instruccion = "select Contrasena as cuantos from login where Usuario = '$nick'";
 		$resultado = mysqli_query($con, $instruccion);
 
 		while ($fila = $resultado->fetch_assoc()) {

@@ -86,13 +86,12 @@ require_once 'database.php';
 
     
     <form action="productos.php" method="post">
-    <br>  
-    <input type="submit" value="filtrar" name="boton" />
-
-    </form>
+      
+    <input class="dropdown-item" type="submit" value="Precio Ascendente" name="boton2"  />
+    <input class="dropdown-item" type="submit" value="Precio Descendente" name="boton"  />
     
-      <a class="dropdown-item" href="productos.php" name="boton">Precio ascendente</a>
-      <a class="dropdown-item" href="#">Precio descendente</a>
+    </form>
+
       <a class="dropdown-item" href="#">Categorias</a>
       
     </div>
@@ -103,7 +102,7 @@ require_once 'database.php';
 <!-- ///////////////////////////// -->
 <?php
 if (isset($_POST['boton'])) {
-echo "has pulsado el boton";
+echo "Has pulsado el boton descendente";
 
 ?>
 <table border="1" >
@@ -111,8 +110,8 @@ echo "has pulsado el boton";
        
 			<td>id</td>
 			<td>Nombre</td>
-            <td>Descripcion</td>
-            <td>Producto destacado</td>
+      <td>Descripcion</td>
+      <td>Producto destacado</td>
 			<td>Precio</td>
 			<td>imagen</td>
 			
@@ -133,6 +132,58 @@ echo "has pulsado el boton";
 				<td><?php echo $mostrar['precio'] ?></td>
         <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
 
+        <?php 
+        if($_SESSION['Trabajador']=='Admin'){
+        ?>
+        <form action="deleteProducto.php" method="get">
+        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
+        <?php 
+          }
+        ?>
+        </form>
+		</tr>
+		<?php 
+			}
+		?>
+	
+	</table>
+  <?php
+  }
+ 
+?>
+<!-- //////////////////////////// -->
+
+<?php
+if (isset($_POST['boton2'])) {
+echo "Has pulsado el boton ascendente";
+?>
+<table border="1" >
+		<tr>
+       
+			<td>id</td>
+			<td>Nombre</td>
+      <td>Descripcion</td>
+      <td>Producto destacado</td>
+			<td>Precio</td>
+			<td>imagen</td>
+			
+		</tr>
+
+		<?php 
+		$consulta="SELECT * from producto ORDER BY precio Asc";
+		$result=mysqli_query($con,$consulta);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+			?>
+
+			<tr>
+      <td><?php echo $mostrar['idProducto'] ?></td>
+				<td><?php echo $mostrar['Nombre'] ?></td>
+        <td><?php echo $mostrar['descripcion'] ?></td>
+        <td><?php echo $mostrar['destacar'] ?></td>
+				<td><?php echo $mostrar['precio'] ?></td>
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+
         <form action="deleteProducto.php" method="get">
         <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
         </form>
@@ -143,14 +194,20 @@ echo "has pulsado el boton";
 		?>
 	
 	</table>
-  <?php
-  }
+<?php
+}
 ?>
-<!-- //////////////////////////// -->
 
+ 
+
+<!-- ///////////////////////////////// -->
+<?php
+if (!isset($_POST['boton2'])&&!isset($_POST['boton'])) {
+echo "no has pulsado boton";
+?>
 <table border="1" >
 		<tr>
-       
+
 			<td>id</td>
 			<td>Nombre</td>
             <td>Descripcion</td>
@@ -185,3 +242,7 @@ echo "has pulsado el boton";
 		?>
 	
 	</table>
+  <?php 
+			}
+		
+		?>
