@@ -72,9 +72,9 @@
       ?>
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="perfil.php">Perfil</a>
-      <a class="dropdown-item" href="#">Pedidos</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
+      <a class="dropdown-item bg-dark" href="#">Pedidos</a>
+      <a class="dropdown-item bg-dark" href="#">Something else here</a>
     </div>
   </div>
 </html>

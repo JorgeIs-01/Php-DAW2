@@ -32,10 +32,10 @@ session_start();
       echo "Bienvenido ".$_SESSION['Trabajador'];
       ?>
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="perfil.php">Perfil</a>
-      <a class="dropdown-item" href="#">Pedidos</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
+      <a class="dropdown-item bg-dark"  href="pedidos.php">Pedidos</a>
+      <a class="dropdown-item bg-dark" href="#">Something else here</a>
     </div>
   </div>
 </html>
