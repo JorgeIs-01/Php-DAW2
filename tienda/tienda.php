@@ -1,3 +1,6 @@
+<?php
+require_once 'database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,7 +134,7 @@
 		</tr>
 
 		<?php 
-		$consulta="SELECT * from producto where destacar='1'";
+		$consulta="SELECT * from producto where destacar=1";
 		$result=mysqli_query($con,$consulta);
 		
 		while($mostrar=mysqli_fetch_array($result)){
@@ -143,11 +146,9 @@
         <td><?php echo $mostrar['descripcion'] ?></td>
         <td><?php echo $mostrar['destacar'] ?></td>
 				<td><?php echo $mostrar['precio'] ?></td>
-        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?></td>
 
-        <form action="deleteProducto.php" method="get">
-        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
-        </form>
+        
 		</tr>
 		<?php 
 			}

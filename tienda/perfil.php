@@ -55,6 +55,42 @@ echo "este es el perfil de ".$_SESSION['Trabajador']
 <!DOCTYPE html>
 
 <body>
+
+<table border="1" >
+		<tr>
+       
+			<td>usuario</td>
+			
+      <td>Contraseña</td>
+      <td>dni</td>
+			<td>gmail</td>
+			
+			
+		</tr>
+
+<?php 
+		$consulta="SELECT * FROM 'registro' ";
+		$result=mysqli_query($con,$consulta);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+			?>
+
+			<tr>
+      <td><?php echo $mostrar['Usuario'] ?></td>
+				<td><?php echo $mostrar['Contrasena'] ?></td>
+        <td><?php echo $mostrar['dni'] ?></td>
+        <td><?php echo $mostrar['gmail'] ?></td>
+				
+        
+		</tr>
+		<?php 
+			}
+		
+		?>
+</table>
+
+
+<!-- //////////////////////////////// -->
   <form action="newpass_ok.php" method = "post">
   Nueva contrasena: <input type="text" name="newpassword" value="">
   <input type="submit" value="Cambiar">

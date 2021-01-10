@@ -135,12 +135,12 @@ echo "Has pulsado el boton descendente";
         <?php 
         if($_SESSION['Trabajador']=='Admin'){
         ?>
-        <form action="deleteProducto.php" method="get">
-        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
+        <td><a href="modificar.php?id=<?php echo $mostrar['idProducto']; ?>"> borrar
+        </a></td>
         <?php 
           }
         ?>
-        </form>
+        
 		</tr>
 		<?php 
 			}
@@ -184,9 +184,8 @@ echo "Has pulsado el boton ascendente";
 				<td><?php echo $mostrar['precio'] ?></td>
         <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
 
-        <form action="deleteProducto.php" method="get">
-        <td><button name='Borrar' type='submit' class='btn btn-danger btn-md' value='<?php $mostrar['idProducto'] ?>'>borrar</button></td>
-        </form>
+        <td><a href="modificar.php?id=<?php echo $mostrar['idProducto']; ?>"> borrar
+        </a></td>
 		</tr>
 		<?php 
 			}
