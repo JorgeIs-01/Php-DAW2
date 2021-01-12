@@ -20,9 +20,9 @@ while($mostrar=mysqli_fetch_array($result)){
     
 
     
-$mostrar['idProducto'];
+$mostrar['MAX(idProducto)'];
 
-$id=$mostrar['idProducto']+1;
+$id=$mostrar['MAX(idProducto)']+1;
 
     }
 		
