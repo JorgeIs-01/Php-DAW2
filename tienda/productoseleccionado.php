@@ -14,22 +14,37 @@ require_once 'database.php';
     <title>Tienda</title>
     <header>
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="tienda.php">Tienda</a>
+  
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="carrito.php">Carrito</a>
       </li>
       <?php
         session_start();
           if ($_SESSION["Trabajador"]!=''){
+      ?>
+      <?php
+       
+          if ($_SESSION["Trabajador"]=='Admin'){
+      ?>
+      <html>
+          <li class="nav-item active">
+        <a class="nav-link " href="nuevoproducto.php"  >Nuevo producto</a>
+      </li>
+      </html>
+      <?php
+      }
       ?>
       <html>
           <li class="nav-item active">
@@ -43,27 +58,19 @@ require_once 'database.php';
       
     </ul>
     <span class="navbar-text">
-</header>
+    </header>
 </head>
 <body>
 
-
     </html>
-<?php 
 
-$id = $_GET['id'];  
-$user=$_SESSION["Trabajador"];
-echo "el id". $id;
-echo "el trabajador".$user;
-?>
+   
+<fieldset style="width: 20px; margin-right:500px ;>
 <table border="1" >
 		<tr>
 
-			<td>id</td>
-			<td>Nombre</td>
-      <td>Descripcion</td>
-			<td>Precio</td>
-			<td>imagen</td>
+			
+			<td><h1>Producto</h1></td>
 			
 		</tr>
 
@@ -75,10 +82,7 @@ echo "el trabajador".$user;
 			?>
 
 			<tr>
-      <td><?php echo $mostrar['idProducto'] ?></td>
-			<td><?php echo $mostrar['Nombre'] ?></td>
-      <td><?php echo $mostrar['descripcion'] ?></td>
-			<td><?php echo $mostrar['precio'] ?></td>
+    
       <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
 		</tr>
     <?php 
@@ -88,7 +92,12 @@ echo "el trabajador".$user;
 		
 		?>
 	
-	</table>
-<?php
-
+    </table>
+    </fieldset>
+    <form action="carrito.php" method="post">
+    
+    price
+    
+    </form>
+    <?php
 ?>

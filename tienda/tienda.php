@@ -121,17 +121,8 @@ require_once 'database.php';
   <div class="margin">
     <h3>Productos destacados</h3>
     <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
-    <table border="1" >
-		<tr>
-       
-			<td>id</td>
-			<td>Nombre</td>
-      <td>Descripcion</td>
-      <td>Producto destacado</td>
-			<td>Precio</td>
-			<td>imagen</td>
-			
-		</tr>
+    <table border="1" style="margin-left:50px">
+		
 
 		<?php 
 		$consulta="SELECT * from producto where destacar=1";
@@ -139,17 +130,22 @@ require_once 'database.php';
 		
 		while($mostrar=mysqli_fetch_array($result)){
 			?>
-
+<tr>
+       
+<td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
+        </a></td>
+		</tr>
 			<tr>
-      <td><?php echo $mostrar['idProducto'] ?></td>
-				<td><?php echo $mostrar['Nombre'] ?></td>
-        <td><?php echo $mostrar['descripcion'] ?></td>
-        <td><?php echo $mostrar['destacar'] ?></td>
+      
 				<td><?php echo $mostrar['precio'] ?></td>
-        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?></td>
-
+        <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
+        </a></td>
+        
+        <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
+        </a></td>
         
 		</tr>
+    
 		<?php 
 			}
 		
@@ -159,5 +155,5 @@ require_once 'database.php';
   </div>
 </div>
 </body>
-
+<br><br><br>
 </html>

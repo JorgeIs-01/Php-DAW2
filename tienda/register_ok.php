@@ -49,6 +49,16 @@ if (isset($_POST["nick"]))
 			echo "Usuario creado";
 			//me lleva al login para que pruebe mi contraseña
 			// echo "<script>alert('Usuario creado correctamente');</script>";
+
+
+			$sql2="CREATE TABLE $nombre (
+				Idpedido VARCHAR(5)  PRIMARY KEY,
+				Usuario VARCHAR(30) NOT NULL,
+				nombreProducto VARCHAR(10) NOT NULL,
+				cantidad int(3),
+				precio int(3)
+				)";
+				mysqli_query($con,$sql2);
 			include_once("index.html");
 		}
 	
