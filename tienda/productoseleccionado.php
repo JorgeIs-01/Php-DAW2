@@ -65,30 +65,34 @@ require_once 'database.php';
     </html>
 
    
-<fieldset style="width: 20px; margin-right:500px ;>
+<fieldset style="width: 20px; margin-right:400px ;>
 <table border="1" >
 		<tr>
 
-			
-			<td><h1>Producto</h1></td>
+      
 			
 		</tr>
 
-		<?php 
-		$consulta="SELECT * from producto where idProducto='1';";
+    <?php 
+    $id=$_SESSION['idProducto'];
+		$consulta="SELECT * from producto where idProducto='$id';";
 		$result=mysqli_query($con,$consulta);
 		
 		while($mostrar=mysqli_fetch_array($result)){
-			?>
-
+      ?>
+      <?php $mostrar['Nombre'] ?>
+      <?php $mostrar['precio'] ?>
+      <?php  $mostrar['descripcion'] ?>
 			<tr>
-    
-      <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+    	<td><h1> <?php echo "Producto  " . $mostrar['Nombre'] ?></h1></td>
+      <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="250">' ?></td>
 		</tr>
     <?php 
-    // $sql="INSERT INTO $user (`Idpedido`, `Usuario`, `nombreProducto`, `cantidad`, `precio`) VALUES ('$idpedido', '$user','$mostrar['Nombre']','$gmail')";
-// mysqli_query($con,$sql);  
-			}
+    
+$_SESSION['Nombre']=$mostrar['Nombre'];      
+$_SESSION['Precio']=$mostrar['precio'];
+$_SESSION['Descripcion']=$mostrar['descripcion'];
+}
 		
 		?>
 	
@@ -96,8 +100,15 @@ require_once 'database.php';
     </fieldset>
     <form action="carrito.php" method="post">
     
-    price
-    
+   Descripcion: <?php echo  $_SESSION['Descripcion']?>
+   Precio: <?php echo  $_SESSION['Precio']?>
+   Nombre: <?php echo  $_SESSION['Nombre']?>
+
+   cantidad <input type="number" name="cantidad">
+   <input type="submit" value="Crear vacaciones" />
+   <td><a href="carrito.php"> <img src="./fotos/carrito.png" width="50px"></a></td>
     </form>
     <?php
+    
+      
 ?>

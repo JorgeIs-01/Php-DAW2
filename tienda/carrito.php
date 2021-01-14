@@ -51,8 +51,13 @@ require_once 'database.php';
     </html>
 <?php 
 
-$id = $_GET['id'];  
+$descripcion= $_SESSION['Descripcion'];
+$nombre= $_SESSION['Nombre'];
+$precio= $_SESSION['Precio'];
 $user=$_SESSION["Trabajador"];
+$id=$_SESSION['idProducto'];
+$cantidad= $_POST["cantidad"];
+echo $cantidad;
 echo "el id". $id;
 echo "el trabajador".$user;
 ?>
@@ -68,7 +73,7 @@ echo "el trabajador".$user;
 		</tr>
 
 		<?php 
-		$consulta="SELECT * from producto where idProducto='1';";
+		$consulta="SELECT * from producto where idProducto='$id';";
 		$result=mysqli_query($con,$consulta);
 		
 		while($mostrar=mysqli_fetch_array($result)){
@@ -79,9 +84,10 @@ echo "el trabajador".$user;
 			<td><?php echo $mostrar['Nombre'] ?></td>
       <td><?php echo $mostrar['descripcion'] ?></td>
 			<td><?php echo $mostrar['precio'] ?></td>
-      <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+      <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="200px">' ?></td>
 		</tr>
     <?php 
+    $idpedido=1;
     // $sql="INSERT INTO $user (`Idpedido`, `Usuario`, `nombreProducto`, `cantidad`, `precio`) VALUES ('$idpedido', '$user','$mostrar['Nombre']','$gmail')";
 // mysqli_query($con,$sql);  
 			}

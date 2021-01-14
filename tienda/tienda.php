@@ -80,11 +80,7 @@ require_once 'database.php';
       <a class="dropdown-item bg-dark" href="#">Something else here</a>
     </div>
   </div>
-</html>
 
-    <html>
-    </span>
-  </div>
 </nav>
 <div id="carouselExampleIndicators" class="carousel slide w-70  " data-ride="carousel" >
   <ol class="carousel-indicators">
@@ -130,30 +126,34 @@ require_once 'database.php';
 		
 		while($mostrar=mysqli_fetch_array($result)){
 			?>
-<tr>
-       
-<td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
-        </a></td>
-		</tr>
+
 			<tr>
       
-				<td><?php echo $mostrar['precio'] ?></td>
-        <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
+			
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
         </a></td>
-        
+        	
         <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
         </a></td>
         
 		</tr>
+   
+    <?php 
+    $_SESSION['idProducto']=$mostrar['idProducto'];
+    echo $_SESSION['idProducto'];
     
-		<?php 
-			}
-		
+    ?>
+    <td><a href="productoseleccionado.php?id=<?php echo $_SESSION['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
+    </a></td>
+    <?php 
+      }
+     
 		?>
 	
 	</table>
   </div>
 </div>
 </body>
-<br><br><br>
+<br><br><br> <tr><a href="productoseleccionado.php?id=<?php echo $_SESSION['idProducto']; ?>"><input type="submit" value="ver producto"> </a></tr>
+		
 </html>
