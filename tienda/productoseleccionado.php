@@ -100,13 +100,13 @@ $_SESSION['Descripcion']=$mostrar['descripcion'];
     </fieldset>
     <form action="carrito.php" method="post">
     
-   Descripcion: <?php echo  $_SESSION['Descripcion']?>
+   <h4>Descripcion del producto:</h4> <?php echo  $_SESSION['Descripcion']?>
    Precio: <?php echo  $_SESSION['Precio']?>
    Nombre: <?php echo  $_SESSION['Nombre']?>
 
-   cantidad <input type="number" name="cantidad">
-   <input type="submit" value="Crear vacaciones" />
-   <td><a href="carrito.php"> <img src="./fotos/carrito.png" width="50px"></a></td>
+   <h4>cantidad</h4> <input type="number" name="cantidad" size="4px">
+   <input type="submit" value="Añadir al carrito" />
+  
     </form>
     <?php
     

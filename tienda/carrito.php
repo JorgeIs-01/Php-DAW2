@@ -64,8 +64,9 @@ echo "el trabajador".$user;
 <table border="1" >
 		<tr>
 
-			<td>id</td>
+			
 			<td>Nombre</td>
+      <td>cantidad</td>
       <td>Descripcion</td>
 			<td>Precio</td>
 			<td>imagen</td>
@@ -80,18 +81,24 @@ echo "el trabajador".$user;
 			?>
 
 			<tr>
-      <td><?php echo $mostrar['idProducto'] ?></td>
+     
 			<td><?php echo $mostrar['Nombre'] ?></td>
+      <td><?php echo $cantidad ?></td>
       <td><?php echo $mostrar['descripcion'] ?></td>
-			<td><?php echo $mostrar['precio'] ?></td>
+			<td><?php echo $mostrar['precio']*$cantidad ?></td>
       <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="200px">' ?></td>
 		</tr>
     <?php 
-    $idpedido=1;
-    // $sql="INSERT INTO $user (`Idpedido`, `Usuario`, `nombreProducto`, `cantidad`, `precio`) VALUES ('$idpedido', '$user','$mostrar['Nombre']','$gmail')";
-// mysqli_query($con,$sql);  
+    $idpedido=2;
+    $nombre=$mostrar['Nombre'];
+    $precioTotal=$mostrar['precio']*$cantidad;
+      $precio=$mostrar['precio'];
+      echo "asd".$precioTotal;
+      	$sql="INSERT INTO $user (`Idpedido`, `Usuario`, `nombreProducto`, `cantidad`, `precio`,`PrecioTotal`) VALUES ('$idpedido', '$user','$nombre','$cantidad','$precio','$precioTotal')";
+      
+      mysqli_query($con,$sql);  
 			}
-		
+	
 		?>
 	
 	</table>
