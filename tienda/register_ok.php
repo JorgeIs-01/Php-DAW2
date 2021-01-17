@@ -52,13 +52,24 @@ if (isset($_POST["nick"]))
 
 
 			$sql2="CREATE TABLE $nombre (
-				Idpedido VARCHAR(5)  PRIMARY KEY,
-				Usuario VARCHAR(30) NOT NULL,
+				Id VARCHAR(5)  PRIMARY KEY,
+				IdPedido VARCHAR(5) NOT NULL,
+				
 				nombreProducto VARCHAR(10) NOT NULL,
 				cantidad int(3),
-				precio int(3)
+				precio int(3),
+				PrecioTotal int(4)
 				)";
 				mysqli_query($con,$sql2);
+
+				$nombre2=$nombre."ok";
+				$sql3="CREATE TABLE $nombre2 (
+					Id VARCHAR(5)  PRIMARY KEY,
+					Usuario VARCHAR(30) NOT NULL,
+					Cantidad VARCHAR(10) NOT NULL,
+					PrecioTotalPedido int(4)
+					)";
+					mysqli_query($con,$sql3);
 			include_once("index.html");
 		}
 	

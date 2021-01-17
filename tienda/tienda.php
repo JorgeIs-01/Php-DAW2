@@ -7,7 +7,7 @@ require_once 'database.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-     <!-- <link rel="stylesheet" href="./tienda.css">  -->
+     <link rel="stylesheet" href="tienda.css"> 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -92,14 +92,14 @@ require_once 'database.php';
     <div class="carousel-inner">
       <div class="carousel-item active">
         
-          <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg"  height="400"   alt="First slide">
+          <img class="d-block w-100" src="https://images01.nicepage.io/page/50/97/html-template-preview-50972.jpg"  height="400"   alt="First slide">
         
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="https://barcelona.cool/wp-content/uploads/2019/02/tienda-hip-hop.jpg" height="400"  alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg"   height="400"  alt="Third slide">
+        <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg"   height="400"  alt="Third slide">
       </div>
     </div>
     </div>
@@ -114,46 +114,35 @@ require_once 'database.php';
 
 
 
-  <div class="margin">
+  <div id="margin">
     <h3>Productos destacados</h3>
     <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
-    <table border="1" style="margin-left:50px">
+  
 		
 
-		<?php 
-		$consulta="SELECT * from producto where destacar=1";
+		
+</html>
+<?php 
+		$consulta="SELECT * from producto where destacar=1 ";
 		$result=mysqli_query($con,$consulta);
 		
 		while($mostrar=mysqli_fetch_array($result)){
 			?>
-
+<tr>
+</tr>
 			<tr>
-      
-			
-        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?>
-        </a></td>
-        	
+      <td><?php  $mostrar['idProducto'] ?></td>
+				<tr><?php echo $mostrar['Nombre'] ?></tr>
+                <td><?php  $mostrar['descripcion'] ?></td>
+                <td><?php $mostrar['destacar'] ?></td>
+				<td><?php echo $mostrar['precio'] ?></td>
+        <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?></td>
+
         <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
         </a></td>
-        
+        <br>
 		</tr>
-   
-    <?php 
-    $_SESSION['idProducto']=$mostrar['idProducto'];
-    echo $_SESSION['idProducto'];
-    
-    ?>
-    <td><a href="productoseleccionado.php?id=<?php echo $_SESSION['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
-    </a></td>
-    <?php 
-      }
-     
-		?>
-	
-	</table>
-  </div>
-</div>
-</body>
-<br><br><br> <tr><a href="productoseleccionado.php?id=<?php echo $_SESSION['idProducto']; ?>"><input type="submit" value="ver producto"> </a></tr>
+		<?php 
+			}
 		
-</html>
+		?>

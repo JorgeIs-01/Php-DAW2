@@ -74,7 +74,8 @@ require_once 'database.php';
 		</tr>
 
     <?php 
-    $id=$_SESSION['idProducto'];
+    $id = $_GET['id']; 
+   
 		$consulta="SELECT * from producto where idProducto='$id';";
 		$result=mysqli_query($con,$consulta);
 		
@@ -92,6 +93,7 @@ require_once 'database.php';
 $_SESSION['Nombre']=$mostrar['Nombre'];      
 $_SESSION['Precio']=$mostrar['precio'];
 $_SESSION['Descripcion']=$mostrar['descripcion'];
+ $_SESSION['idProducto']=$id;
 }
 		
 		?>
@@ -110,5 +112,6 @@ $_SESSION['Descripcion']=$mostrar['descripcion'];
     </form>
     <?php
     
+   
       
 ?>

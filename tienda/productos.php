@@ -234,6 +234,8 @@ echo "no has pulsado boton";
 
         <td><a href="deleteProducto.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/borrar.png" width="50px">
         </a></td>
+        <td><a href="modificarproducto.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/modificar.png" width="50px">
+        </a></td>
 		</tr>
 		<?php 
 			}

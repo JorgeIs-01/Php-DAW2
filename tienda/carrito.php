@@ -57,6 +57,47 @@ $precio= $_SESSION['Precio'];
 $user=$_SESSION["Trabajador"];
 $id=$_SESSION['idProducto'];
 $cantidad= $_POST["cantidad"];
+$precioTotal=$precio*$cantidad;
+
+
+
+//////////////////////
+
+
+$user=$_SESSION["Trabajador"];
+$sql3 = "SELECT MAX(id) FROM $user ";
+$result = mysqli_query($con, $sql3);
+
+while ($mostrar = mysqli_fetch_array($result)) {
+
+  
+    
+      $mostrar['MAX(id)'] ;
+      $idsolicitud= $mostrar['MAX(id)']+1;
+}
+echo $idsolicitud."idregistro";
+$user2=$user."ok";
+$sql4 = "SELECT MAX(id) FROM $user2 ";
+$result = mysqli_query($con, $sql4);
+
+while ($mostrar = mysqli_fetch_array($result)) {
+
+  
+    
+      $mostrar['MAX(id)'] ;
+      $idpedido= $mostrar['MAX(id)']+1;
+}
+echo $idpedido."idpedido";
+
+$sql="INSERT INTO $user (`Id`,`Idpedido`,  `nombreProducto`, `cantidad`, `precio`,`PrecioTotal`) VALUES ('$idsolicitud','$idpedido', '$nombre','$cantidad','$precio','$precioTotal')";
+
+mysqli_query($con,$sql);  
+
+
+
+/////////////////////////
+
+
 echo $cantidad;
 echo "el id". $id;
 echo "el trabajador".$user;
@@ -67,14 +108,14 @@ echo "el trabajador".$user;
 			
 			<td>Nombre</td>
       <td>cantidad</td>
-      <td>Descripcion</td>
-			<td>Precio</td>
+      <td>precio</td>
+			<td>Precio total</td>
 			<td>imagen</td>
 			
 		</tr>
 
 		<?php 
-		$consulta="SELECT * from producto where idProducto='$id';";
+		$consulta="SELECT * from $user ";
 		$result=mysqli_query($con,$consulta);
 		
 		while($mostrar=mysqli_fetch_array($result)){
@@ -82,25 +123,26 @@ echo "el trabajador".$user;
 
 			<tr>
      
-			<td><?php echo $mostrar['Nombre'] ?></td>
-      <td><?php echo $cantidad ?></td>
-      <td><?php echo $mostrar['descripcion'] ?></td>
-			<td><?php echo $mostrar['precio']*$cantidad ?></td>
+			<td><?php echo $mostrar['nombreProducto'] ?></td>
+      <td><?php echo $mostrar['cantidad'] ?></td>
+      <td><?php echo $mostrar['precio'] ?></td>
+			<td><?php echo $mostrar['PrecioTotal'] ?></td>
       <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="200px">' ?></td>
 		</tr>
     <?php 
-    $idpedido=2;
+    
     $nombre=$mostrar['Nombre'];
-    $precioTotal=$mostrar['precio']*$cantidad;
+    
       $precio=$mostrar['precio'];
       echo "asd".$precioTotal;
-      	$sql="INSERT INTO $user (`Idpedido`, `Usuario`, `nombreProducto`, `cantidad`, `precio`,`PrecioTotal`) VALUES ('$idpedido', '$user','$nombre','$cantidad','$precio','$precioTotal')";
+      echo $user;
       
-      mysqli_query($con,$sql);  
-			}
-	
+      }
+      
+      
 		?>
-	
+    <form action="pedidos_ok.php">
+	<input type="submit"value="Finalizar pedido"></form>
 	</table>
 <?php
 
