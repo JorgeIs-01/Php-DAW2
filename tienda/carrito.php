@@ -106,19 +106,20 @@ $user=$_SESSION["Trabajador"];
 			?>
 
 			<tr>
-     
+      <td><?php echo $mostrar['Id'] ?></td>
 			<td><?php echo $mostrar['nombreProducto'] ?></td>
       <td><?php echo $mostrar['cantidad'] ?></td>
       <td><?php echo $mostrar['precio'] ?></td>
 			<td><?php echo $mostrar['PrecioTotal'] ?></td>
       <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="200px">' ?></td>
-		</tr>
+      <td><a href="deletecarrito.php?id=<?php echo $mostrar['Id']; ?>"> <img src="./fotos/borrar.png" width="50px">
+        </a></td>
+    
+    </tr>
     <?php 
     
     $nombre=$mostrar['Nombre'];
     
-    
-      
       }
       
       

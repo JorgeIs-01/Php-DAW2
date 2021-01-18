@@ -119,7 +119,7 @@ $_SESSION['Descripcion']=$mostrar['descripcion'];
    Precio: <?php echo  $_SESSION['Precio']?>
    Nombre: <?php echo  $_SESSION['Nombre']?>
 
-   <h4>cantidad</h4> <input type="number" name="cantidad" size="4px">
+   <h4>cantidad</h4> <input type="number" name="cantidad" value="1" required>
    <input type="submit" value="Añadir al carrito" />
 
  
