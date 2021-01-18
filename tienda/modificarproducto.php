@@ -90,7 +90,7 @@ require_once 'database.php';
               </tr>
             <?php
                   session_start();
-  
+  //Pasamos las variables a session para poderlas utilizar en varias paginas del programa
                   $_SESSION['Nombre'] = $mostrar['Nombre'];
                   $_SESSION['descripcion'] = $mostrar['descripcion'];
                   $_SESSION['destacar'] = $mostrar['destacar'];
