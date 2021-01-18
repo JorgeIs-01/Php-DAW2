@@ -58,7 +58,8 @@ if (isset($_POST["nick"]))
 				nombreProducto VARCHAR(10) NOT NULL,
 				cantidad int(3),
 				precio int(3),
-				PrecioTotal int(4)
+				PrecioTotal int(4),
+				imagen VARCHAR(300)
 				)";
 				mysqli_query($con,$sql2);
 

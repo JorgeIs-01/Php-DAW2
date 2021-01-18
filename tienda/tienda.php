@@ -113,13 +113,7 @@ require_once 'database.php';
     <span class="sr-only">Next</span>
   </a>
 
-
-
-  <div id="margin">
-    <h3>Productos destacados</h3>
-    <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
-  
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -136,6 +130,12 @@ require_once 'database.php';
         <form action="logout_ok.php">
         <button type="submit" class="btn btn-danger">Cerrar sesion</button>
 
+
+  <div id="margin">
+    <h3>Productos destacados</h3>
+    <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
+  
+    
         
 </form>
       </div>

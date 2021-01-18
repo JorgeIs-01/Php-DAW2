@@ -42,6 +42,21 @@ require_once 'database.php';
       
       
     </ul>
+    
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?php
+      echo "Bienvenido ".$_SESSION['Trabajador'];
+      ?>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
+      <a class="dropdown-item bg-dark" href="#">Pedidos</a>
+      <button type="button"class="dropdown-item active bg-dark " data-toggle="modal" data-target="#exampleModal" sty>
+  Logout
+</button>
+    </div>
+  </div>
     <span class="navbar-text">
 </header>
 </head>
@@ -60,47 +75,16 @@ $cantidad= $_POST["cantidad"];
 $precioTotal=$precio*$cantidad;
 
 
-
 //////////////////////
 
 
 $user=$_SESSION["Trabajador"];
-$sql3 = "SELECT MAX(id) FROM $user ";
-$result = mysqli_query($con, $sql3);
-
-while ($mostrar = mysqli_fetch_array($result)) {
-
-  
-    
-      $mostrar['MAX(id)'] ;
-      $idsolicitud= $mostrar['MAX(id)']+1;
-}
-echo $idsolicitud."idregistro";
-$user2=$user."ok";
-$sql4 = "SELECT MAX(id) FROM $user2 ";
-$result = mysqli_query($con, $sql4);
-
-while ($mostrar = mysqli_fetch_array($result)) {
-
-  
-    
-      $mostrar['MAX(id)'] ;
-      $idpedido= $mostrar['MAX(id)']+1;
-}
-echo $idpedido."idpedido";
-
-$sql="INSERT INTO $user (`Id`,`Idpedido`,  `nombreProducto`, `cantidad`, `precio`,`PrecioTotal`) VALUES ('$idsolicitud','$idpedido', '$nombre','$cantidad','$precio','$precioTotal')";
-
-mysqli_query($con,$sql);  
-
 
 
 /////////////////////////
 
 
-echo $cantidad;
-echo "el id". $id;
-echo "el trabajador".$user;
+
 ?>
 <table border="1" >
 		<tr>
@@ -133,9 +117,7 @@ echo "el trabajador".$user;
     
     $nombre=$mostrar['Nombre'];
     
-      $precio=$mostrar['precio'];
-      echo "asd".$precioTotal;
-      echo $user;
+    
       
       }
       
@@ -147,3 +129,26 @@ echo "el trabajador".$user;
 <?php
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Seguro que quieres salir?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="logout_ok.php">
+        <button type="submit" class="btn btn-danger">Cerrar sesion</button>
+
+</body>
+</html>

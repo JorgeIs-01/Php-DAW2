@@ -106,13 +106,14 @@ $_SESSION['Nombre']=$mostrar['Nombre'];
 $_SESSION['Precio']=$mostrar['precio'];
 $_SESSION['Descripcion']=$mostrar['descripcion'];
  $_SESSION['idProducto']=$id;
+ $_SESSION['imagen']=$mostrar['imagen'];
 }
 		
 		?>
 	
     </table>
     </fieldset>
-    <form action="carrito.php" method="post">
+    <form action="anadiralcarrito.php" method="post">
     
    <h4>Descripcion del producto:</h4> <?php echo  $_SESSION['Descripcion']?>
    Precio: <?php echo  $_SESSION['Precio']?>
@@ -120,6 +121,8 @@ $_SESSION['Descripcion']=$mostrar['descripcion'];
 
    <h4>cantidad</h4> <input type="number" name="cantidad" size="4px">
    <input type="submit" value="Añadir al carrito" />
+
+ 
   
     </form>
     <?php
