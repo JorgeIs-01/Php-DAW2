@@ -47,9 +47,7 @@ require_once 'database.php';
       }
       ?>
       <html>
-          <li class="nav-item active">
-        <a class="nav-link " href="logout.php" >Logout</a>
-      </li>
+       
       </html>
       <?php
       }
@@ -58,6 +56,20 @@ require_once 'database.php';
       
     </ul>
     <span class="navbar-text">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?php
+      echo "Bienvenido ".$_SESSION['Trabajador'];
+      ?>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
+      <a class="dropdown-item bg-dark" href="#">Pedidos</a>
+      <button type="button"class="dropdown-item active bg-dark " data-toggle="modal" data-target="#exampleModal" sty>
+  Logout
+</button>
+    </div>
+  </div>
     </header>
 </head>
 <body>

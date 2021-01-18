@@ -50,9 +50,8 @@ require_once 'database.php';
       }
       ?>
       <html>
-          <li class="nav-item active">
-        <a class="nav-link " href="logout.php" >Logout</a>
-      </li>
+     
+       
       </html>
       <?php
       }
@@ -77,7 +76,9 @@ require_once 'database.php';
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
       <a class="dropdown-item bg-dark" href="#">Pedidos</a>
-      <a class="dropdown-item bg-dark" href="#">Something else here</a>
+      <button type="button"class="dropdown-item active bg-dark " data-toggle="modal" data-target="#exampleModal" sty>
+  Logout
+</button>
     </div>
   </div>
 
@@ -118,7 +119,29 @@ require_once 'database.php';
     <h3>Productos destacados</h3>
     <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
   
-		
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Seguro que quieres salir?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="logout_ok.php">
+        <button type="submit" class="btn btn-danger">Cerrar sesion</button>
+
+        
+</form>
+      </div>
+    </div>
+  </div>
+</div>	
 
 		
 </html>
