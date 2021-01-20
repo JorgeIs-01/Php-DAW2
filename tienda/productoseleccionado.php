@@ -66,7 +66,7 @@ require_once 'database.php';
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
-              <a class="dropdown-item bg-dark" href="#">Pedidos</a>
+              <a class="dropdown-item bg-dark" href="historialpedidos.php">Pedidos</a>
               <button type="button" class="dropdown-item active bg-dark " data-toggle="modal" data-target="#exampleModal" sty>
                 Logout
               </button>

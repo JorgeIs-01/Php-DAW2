@@ -121,14 +121,18 @@ $user=$_SESSION['Trabajador'];
 		?>
 </table>
 
-
+<br><br>
 <!-- //////////////////////////////// -->
 <form action="newname_ok.php" method = "post">
   Cambiar nombre <input type="text" name="newname" value="">
   <input type="submit" value="Cambiar">
 </form>
   <form action="newpass_ok.php" method = "post">
-  Nueva contrasena: <input type="text" name="newpassword" value="">
+  Nueva contrasena: <input type="password" name="newpassword" value="">
+  <input type="submit" value="Cambiar">
+</form>
+<form action="newgmail.php" method = "post">
+  Nuevo correo: <input type="email" name="newgmail" value="">
   <input type="submit" value="Cambiar">
 </form>
 </body>

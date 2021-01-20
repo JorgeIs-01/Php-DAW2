@@ -13,7 +13,7 @@ if (isset($_POST["nick"]))
 	$gmail = $_POST["email"];
 	echo "El nombre es ".$nombre;
 
-	$con = mysqli_connect("localhost", "root", "usbw", "tienda") or die(mysql_error());
+	$con = mysqli_connect("localhost", "root", "usbw", "tienda") or die(mysqli_connect_error());
 	
 	if (!$con)
 	{
