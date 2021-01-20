@@ -235,6 +235,11 @@ if($_SESSION["Trabajador"]=='Admin'){
         </a></td>
 		</tr>
     <?php 
+    }else{
+      ?>
+      <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
+      </a></td>
+<?php
     }
 			}
 		

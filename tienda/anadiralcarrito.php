@@ -42,4 +42,3 @@ $sql="INSERT INTO $user
 
 mysqli_query($con,$sql);  
  header("Location: carrito.php");
-?>

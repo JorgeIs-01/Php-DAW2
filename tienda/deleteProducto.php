@@ -17,4 +17,3 @@ mysqli_query($con, $sql);
 
 echo "se elimino correctamente";
 header("Location: productos.php");
-?>
