@@ -16,5 +16,5 @@ $sql = "DELETE FROM producto WHERE idProducto  ='$id'";
 mysqli_query($con, $sql); 
 
 echo "se elimino correctamente";
-
+header("Location: productos.php");
 ?>

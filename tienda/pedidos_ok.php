@@ -29,6 +29,7 @@ $sql = "INSERT into $user2 (`Id`,`Usuario`, `Cantidad`, `PrecioTotalPedido`)
 $borrar .="TRUNCATE TABLE $user";
 if ($con->multi_query($borrar)) {
     echo "<br>Carrito actualizado";
+    header("Location: historialpedidos.php");
     } else {
     echo "Error updating record: " . mysqli_error($con);;
     }

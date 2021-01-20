@@ -37,6 +37,7 @@ $sql = "INSERT INTO producto
     
 if (mysqli_query($con, $sql)) {
     echo "Datos introducidos en la base de datos <br>";
+    header("Location: productos.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($con);
 }
