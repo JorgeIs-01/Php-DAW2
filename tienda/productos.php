@@ -223,13 +223,19 @@ echo "Sin filtros";
                 <td><?php echo $mostrar['destacar'] ?></td>
 				<td><?php echo $mostrar['precio'] ?></td>
         <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
+<?php
+if($_SESSION["Trabajador"]=='Admin'){
+
+
+?>
 
         <td><a href="deleteProducto.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/borrar.png" width="50px">
         </a></td>
         <td><a href="modificarproducto.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/modificar.png" width="50px">
         </a></td>
 		</tr>
-		<?php 
+    <?php 
+    }
 			}
 		
 		?>

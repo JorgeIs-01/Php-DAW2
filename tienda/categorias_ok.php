@@ -75,21 +75,21 @@ require_once 'database.php';
 
 
 <?php
+//recogemos la categoria que ha seleccionado el usuario y hacemos un select where categoria sea igual a la variable
  $categoria = $_GET['id'];
  ?>
  <h4>Categoria Seleccionada:</h4>
  
- <table >
+ <table style="width: 700px;">
  <thead class="thead-dark" >
 			
 			<th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Producto destacado</th>
+      <th>Descripcion</th> 
 			<th>Precio</th>
-			<th>imagen</th>
-			</thead>
+			<th>Imagen</th>
+			</thead><br><br>
  <?php
- echo $categoria;
+
  
 $consulta="SELECT * from producto where categoria='$categoria'";
 		$result=mysqli_query($con,$consulta);
@@ -98,11 +98,10 @@ $consulta="SELECT * from producto where categoria='$categoria'";
 			?>
 
 			<tr>
-      <td><?php  $mostrar['idProducto'] ?></td><br>
+      
 				<td><?php echo $mostrar['Nombre'] ?></td><br>
                 <td><?php echo $mostrar['descripcion'] ?></td><br>
-                <td><?php echo $mostrar['categoria']?> </td><br>
-                <td><?php echo  $mostrar['destacar'] ?></td><br>
+            
 				<td><?php echo $mostrar['precio'] ?></td><br>
         <td><?php echo  '<img src='.$mostrar['imagen'].' alt="" class="foto">' ?></td>
 

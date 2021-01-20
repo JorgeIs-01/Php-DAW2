@@ -149,6 +149,7 @@ require_once 'database.php';
       </div>
 </html>
 <?php
+//si el administrador al introducir los productos quiere destacarlo se mostraran en la pagina principal
 $consulta = "SELECT * from producto where destacar=1 ";
 $result = mysqli_query($con, $consulta);
 
