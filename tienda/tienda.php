@@ -51,9 +51,7 @@ require_once 'database.php';
 
 
             </html>
-          <?php
-          }
-          ?>
+
 
 
         </ul>
@@ -69,7 +67,7 @@ require_once 'database.php';
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <?php
-    echo "Bienvenido " . $_SESSION['Trabajador'];
+            echo "Bienvenido " . $_SESSION['Trabajador'];
     ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -80,73 +78,87 @@ require_once 'database.php';
     </button>
   </div>
 </div>
+<?php
+          }
+          if ($_SESSION["Trabajador"] == '') {
+?><html>
+  <li class="nav-item active">
+    <a class="nav-link " href="index.html">Login</a>
+  </li>
+<?php
+          }
 
-</nav>
-</header>
-</head>
+?>
 
-<body>
+  </html>
+  </nav>
+  </header>
+
+  </head>
+
+  <body>
 
 
-  <div id="carouselExampleIndicators" class="carousel slide w-70  " data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="container">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+    <div id="carouselExampleIndicators" class="carousel slide w-70  " data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="container">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
 
-          <img class="d-block w-100" src="https://images01.nicepage.io/page/50/97/html-template-preview-50972.jpg" height="400" alt="First slide">
+            <img class="d-block w-100" src="https://images01.nicepage.io/page/50/97/html-template-preview-50972.jpg" height="400" alt="First slide">
 
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="https://barcelona.cool/wp-content/uploads/2019/02/tienda-hip-hop.jpg" height="400" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg" height="400" alt="Third slide">
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
-          <div class="modal-body">
-            Seguro que quieres salir?
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://barcelona.cool/wp-content/uploads/2019/02/tienda-hip-hop.jpg" height="400" alt="Second slide">
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <form action="logout_ok.php">
-              <button type="submit" class="btn btn-danger">Cerrar sesion</button>
-
-            </form>
-
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://i.pinimg.com/564x/c1/e9/4d/c1e94ddcf446a073f7cc9ecc4e68b0b1.jpg" height="400" alt="Third slide">
           </div>
         </div>
       </div>
-    </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
-    <div id="margin">
-      <h3>Productos destacados</h3>
-      <p>aqui vamos a mostrar varios productos que tengan el apartado oferta activado.</p>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Seguro que quieres salir?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="logout_ok.php">
+                <button type="submit" class="btn btn-danger">Cerrar sesion</button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="margin">
+        <h3>Productos destacados</h3>
+        <!-- aqui vamos a mostrar varios productos que tengan el apartado oferta activado -->
 
       </div>
+
 </html>
 <?php
 //si el administrador al introducir los productos quiere destacarlo se mostraran en la pagina principal
@@ -164,12 +176,19 @@ while ($mostrar = mysqli_fetch_array($result)) {
   <td><?php $mostrar['destacar'] ?></td>
   <td><?php echo $mostrar['precio'] ?></td>
   <td><?php echo '<img src=' . $mostrar['imagen'] . ' alt="" class="foto" width="150">' ?></td>
+  <?php
+  if ($_SESSION["Trabajador"] != '') {
 
-  <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
-    </a></td>
+  ?>
+    <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
+      </a></td>
+
+    </tr>
+
+  <?php
+  }
+  ?>
   <br><br>
-  </tr>
-
 <?php
 }
 
