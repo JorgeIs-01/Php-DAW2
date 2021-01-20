@@ -68,14 +68,19 @@
   </div>
 </nav>
 
-<br><br><div class="container">
-<form action="nuevoproducto_ok.php" method="post">
-Nombre producto: <input type="text" name="nombre" value=""><br>
-Descripcion:<input type="text" name="descripcion" value=""><br>
-Destacar producto<input type="boolean" name="destacar" value=""><br>
-Precio<input type="number" name="precio" value=""><br>
-Imagen<input type="text" name="imagen" value=""><br>
-<td><input type="submit" value="crear"></td>
+<br><br>
+<h1 >Generador de productos</h1>
+<div class="container" style="background-color: gray; margin-left: 250px;">
+<h1 align="center"> Datos Producto </h1>
+
+<form action="nuevoproducto_ok.php" method="post"><br>
+Nombre producto: <input type="text" name="nombre" value="" required><br><br>
+Descripcion:<input type="text" name="descripcion" value="" required><br><br>
+Destacar producto<input type="boolean" name="destacar" value="" required><br><br>
+Categoria:<input type="text" name="categoria" value="" required><br><br>
+Precio<input type="number" name="precio" value="" required><br><br>
+Imagen<input type="text" name="imagen" value="" required><br><br>
+<td><input class="btn-primary" type="submit" value="Crear producto" ></td><br><br>
 </form>
 
 </div>

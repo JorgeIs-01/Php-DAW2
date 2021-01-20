@@ -163,7 +163,7 @@ require_once 'database.php';
 				<td><?php echo $mostrar['precio'] ?></td>
         <td><?php echo '<img src='.$mostrar['imagen'].' alt="" class="foto" width="150">' ?></td>
 
-        <td><a href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
+        <td><a  href="productoseleccionado.php?id=<?php echo $mostrar['idProducto']; ?>"> <img src="./fotos/carrito.png" width="50px">
         </a></td>
         <br>
 		</tr>

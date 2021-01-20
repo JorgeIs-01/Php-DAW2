@@ -5,6 +5,7 @@ require_once 'database.php';
 $nombre= $_POST["nombre"];
 $desc= $_POST["descripcion"];
 $destacar= $_POST["destacar"];
+$categoria= $_POST["categoria"];
 $precio= $_POST["precio"];
 $img= $_POST["imagen"];
 
@@ -30,8 +31,8 @@ $id=$mostrar['MAX(idProducto)']+1;
 
 
 
-$sql = "INSERT INTO producto (idProducto, Nombre , descripcion, destacar, precio, imagen) 
-    VALUES ('$id','$nombre', '$desc', '$destacar','$precio','$img')";
+$sql = "INSERT INTO producto  
+    VALUES ('$id','$nombre', '$desc', '$destacar','$categoria','$precio','$img')";
 
     
 if (mysqli_query($con, $sql)) {

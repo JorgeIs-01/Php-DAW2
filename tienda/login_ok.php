@@ -58,9 +58,11 @@ $_SESSION ["Trabajador"]=$nick;
 		else{
 			echo "Login OK";
 			$_SESSION["nick_logueado"]=$nick;
+
+				header("Location: tienda.php");
 			?> 
 			
-			<a href="tienda.php">Acceder al menu</a>
+		
 			
 			<?php
 			
