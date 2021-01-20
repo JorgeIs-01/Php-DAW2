@@ -19,7 +19,7 @@ require_once 'database.php';
         <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
       </li>
       
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="carrito.php">Carrito</a>
       </li>
       <?php
@@ -37,13 +37,7 @@ require_once 'database.php';
       </html>
       <?php
       }
-      ?>
-      <html>
-          <li class="nav-item active">
-        <a class="nav-link " href="logout.php" >Logout</a>
-      </li>
-      </html>
-      <?php
+     
       }
       ?>
       
@@ -105,7 +99,7 @@ require_once 'database.php';
 <!-- ///////////////////////////// -->
 <?php
 if (isset($_POST['boton'])) {
-echo "Has pulsado el boton descendente";
+echo "Precio descendente";
 
 ?>
 <table border="1" >
@@ -156,7 +150,7 @@ echo "Has pulsado el boton descendente";
 
 <?php
 if (isset($_POST['boton2'])) {
-echo "Has pulsado el boton ascendente";
+echo "Precio ascendente";
 ?>
 <table border="1" >
 		<tr>
@@ -201,7 +195,7 @@ echo "Has pulsado el boton ascendente";
 <!-- ///////////////////////////////// -->
 <?php
 if (!isset($_POST['boton2'])&&!isset($_POST['boton'])) {
-echo "no has pulsado boton";
+echo "Sin filtros";
 ?>
 <table border="1" >
 		<tr>

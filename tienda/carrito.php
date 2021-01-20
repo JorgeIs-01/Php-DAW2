@@ -14,27 +14,40 @@ require_once 'database.php';
     <title>Tienda</title>
     <header>
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="tienda.php">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="carrito.php">Carrito</a>
-      </li>
+    <ul class="navbar-nav mr-auto"> 
       <?php
         session_start();
           if ($_SESSION["Trabajador"]!=''){
       ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
+      </li>
+    
+      <li class="nav-item active">
+        <a class="nav-link" href="carrito.php">Carrito</a>
+      </li>
+     
+      <?php
+       
+          if ($_SESSION["Trabajador"]=='Admin'){
+      ?>
       <html>
           <li class="nav-item active">
-        <a class="nav-link " href="logout.php" >Logout</a>
+        <a class="nav-link " href="nuevoproducto.php"  >Nuevo producto</a>
       </li>
+      </html>
+      <?php
+      }
+      ?>
+      <html>
+     
+       
       </html>
       <?php
       }
@@ -42,7 +55,14 @@ require_once 'database.php';
       
       
     </ul>
+    <span class="navbar-text">
+    </html>
     
+    <?php
+
+
+?>
+<html>
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <?php
@@ -51,13 +71,14 @@ require_once 'database.php';
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item bg-dark" href="perfil.php">Perfil</a>
-      <a class="dropdown-item bg-dark" href="#">Pedidos</a>
+      <a class="dropdown-item bg-dark" href="historialpedidos.php">Pedidos</a>
       <button type="button"class="dropdown-item active bg-dark " data-toggle="modal" data-target="#exampleModal" sty>
   Logout
 </button>
     </div>
   </div>
-    <span class="navbar-text">
+
+</nav>
 </header>
 </head>
 <body>

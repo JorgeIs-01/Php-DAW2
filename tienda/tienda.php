@@ -14,29 +14,25 @@ require_once 'database.php';
     <title>Tienda</title>
     <header>
   
-  
-</header>
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Tienda</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="carrito.php">Carrito</a>
-      </li>
+    <ul class="navbar-nav mr-auto"> 
       <?php
         session_start();
           if ($_SESSION["Trabajador"]!=''){
       ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="productos.php">Productos <span class="sr-only">(current)</span></a>
+      </li>
+    
+      <li class="nav-item active">
+        <a class="nav-link" href="carrito.php">Carrito</a>
+      </li>
+     
       <?php
        
           if ($_SESSION["Trabajador"]=='Admin'){
@@ -83,6 +79,11 @@ require_once 'database.php';
   </div>
 
 </nav>
+</header>
+</head>
+<body>
+
+
 <div id="carouselExampleIndicators" class="carousel slide w-70  " data-ride="carousel" >
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
