@@ -152,8 +152,8 @@ require_once 'database.php';
           </div>
         </div>
       </div>
-
-      <div id="margin">
+      
+      <div  id="margin"><br><br>
         <h3>Productos destacados</h3>
         <!-- aqui vamos a mostrar varios productos que tengan el apartado oferta activado -->
 
@@ -169,6 +169,8 @@ while ($mostrar = mysqli_fetch_array($result)) {
 ?>
   <tr>
   </tr>
+  <div class="container">
+  
   <tr>
     <td><?php $mostrar['idProducto'] ?></td>
   <tr><?php echo $mostrar['Nombre'] ?></tr>
@@ -184,7 +186,8 @@ while ($mostrar = mysqli_fetch_array($result)) {
       </a></td>
 
     </tr>
-
+    </div>
+   
   <?php
   }
   ?>

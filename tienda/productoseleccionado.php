@@ -80,7 +80,7 @@ require_once 'database.php';
 </html>
 
 
-<fieldset style="width: 20px; margin-right:400px ;">
+<fieldset style="width: 200px; margin-right:400px ;">
   <table>
     <tr>
 
